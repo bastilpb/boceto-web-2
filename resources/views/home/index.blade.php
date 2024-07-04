@@ -60,7 +60,7 @@
                     <h5>Vehiculos</h5>
                     <p>Some representative placeholder content for the first slide.</p>
                 </div>
-                <a href="">
+                <a href="{{asset('images/trafico-calle.jpg')}}">
                     <button class="btn btn-primary mt-3 border-white">VEHICULOS</button>
                 </a>
             </div>
@@ -80,13 +80,13 @@
         </div>
 
         <div class="carousel-item">
-            <img src="{{asset('images/trafico-calle.jpg')}}" class="d-block w-100" alt="...">
+            <img src="" class="d-block w-100" alt="...">
             <div class="carousel-caption d-md-block">
                 <div class="d-none d-md-block">
                     <h5>Contacto</h5>
                     <p>Some representative placeholder content for the third slide.</p>
                 </div>
-                <a href="">
+                <a href="{{ route('vehiculos.index') }}">
                     <button class="btn btn-primary mt-3 border-white">CONTACTO</button>
                 </a>
             </div>
