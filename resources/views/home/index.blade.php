@@ -60,7 +60,8 @@
                     <h5>Vehiculos</h5>
                     <p>Some representative placeholder content for the first slide.</p>
                 </div>
-                <a href="{{asset('images/trafico-calle.jpg')}}">
+                <a href="{{ route('vehiculos.index') }}">          
+                    {{-- LINKEAMO LA RUTA Y RETORNAMO VISTA --}}
                     <button class="btn btn-primary mt-3 border-white">VEHICULOS</button>
                 </a>
             </div>
@@ -86,7 +87,7 @@
                     <h5>Contacto</h5>
                     <p>Some representative placeholder content for the third slide.</p>
                 </div>
-                <a href="{{ route('vehiculos.index') }}">
+                <a href=>
                     <button class="btn btn-primary mt-3 border-white">CONTACTO</button>
                 </a>
             </div>
