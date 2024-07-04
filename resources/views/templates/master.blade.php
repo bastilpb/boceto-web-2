@@ -17,22 +17,22 @@
 
 
     <style>
-        body{
+        body {
             font-family: "Roboto Slab", serif;
-            padding-top: 70px;
+            padding-top: 56px;
         }
 
-        .navbar{
+        .navbar {
             font-weight: 600;
             font-size: 25px;
+            height: 56px;
         }
-
     </style>
 
     @yield('style')
-    
-        
-    
+
+
+
 </head>
 
 
@@ -68,11 +68,10 @@
         </div>
     </nav>
 
-    <div class="container-fluid">
 
-        @yield('contenido')
-        
-    </div>
+
+    @yield('contenido')
+
 
 
 
@@ -86,6 +85,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
+
+    @yield('script')
 
 </body>
 
