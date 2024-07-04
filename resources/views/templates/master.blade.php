@@ -45,34 +45,31 @@
             </button>
             <div class="collapse navbar-collapse" id="navbar-start">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
+                    <li class="nav-item mx-2">
                         <a class="nav-link" href="#">Vehiculos</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About us</a>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="#">Sobre Nosotros</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
+                        <a class="nav-link mx-2" href="#">Contacto</a>
                     </li>
                 </ul>
-                <a href="login.html">
-                    <button type="submit" class="btn btn-primary border-white">Iniciar Sesion</button>
-                </a>
-                <a href="resgitro.html">
-                    <button type="submit" class="btn btn-primary border-white">Registrate</button>
-                </a>
+
+
+                <a href="#" class="btn btn-primary border-white mx-2">Iniciar Sesion</a>
+
             </div>
         </div>
     </nav>
 
+    <div class="container-fluid">
 
-    {{-- <footer class="bg-dark p-2 text-center sticky-bottom">
-        <div class="container">
-            <p class="text-white bi bi-check-circle-fill"> Somos ARRIENDOS LA V </p>
-        </div>
-    </footer> --}}
+        @yield('contenido')
+        
+    </div>
 
 
 
