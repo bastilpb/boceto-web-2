@@ -33,7 +33,7 @@
             <div class="carousel-caption c-caption d-none d-md-block">
                 <h1 class="">Arrienda ya!</h1>
                 <p class="fs-5">El vehiculo que necesites, al mejor precio en el mercado</p>
-                <a href="" class="btn btn-primary">Ver vehiculos disponibles</a>
+                <a href="{{route('vehiculos.index')}}" class="btn btn-primary">Ver vehiculos disponibles</a>
             </div>
         </div>
         <div class="carousel-item c-item ">
