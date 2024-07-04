@@ -11,3 +11,4 @@ Route::get('/',[HomeController::class,'index'])->name('home.index');
 
 
 Route::get('/usuarios/login',[UsuariosController::class,'login'])->name('usuarios.login');
+Route::post('/usuarios/login',[UsuariosController::class, 'autenticar'])->name('usuarios.autenticar');

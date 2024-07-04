@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\ViewServiceProvider;
+use Illuminate\Support\Facades\Auth;
 
 class UsuariosController extends Controller
 {
@@ -63,9 +64,15 @@ class UsuariosController extends Controller
         //
     }
 
-    public function login(Request $request){
-
+    public function login(){
         return view('usuarios.login');
+
+    }
+
+    public function autenticar(Request $request){
+
+        $credenciales = ['email'=>$request->email,'password'=>$request->password];
+        dd($credenciales);
 
     }
 

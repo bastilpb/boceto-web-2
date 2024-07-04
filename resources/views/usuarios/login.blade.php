@@ -33,7 +33,7 @@
             <div class="card-body">
                 <div class="row">
 
-                    <form method="POST" action="">
+                    <form method="POST" action="{{ route('usuarios.autenticar')}}">
                         @csrf
                         <div class="row">
                             <div class="col-6 my-3">
