@@ -53,7 +53,7 @@
                     </li>
 
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="#">Sobre Nosotros</a>
+                        <a class="nav-link" href="{{route('arriendos.index')}}">Arrendar</a>
                     </li>
 
                     <li class="nav-item">
