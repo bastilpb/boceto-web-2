@@ -39,6 +39,9 @@ Route::get('/arriendos/{vehiculo}',[ArriendosController::class,'create'])->name(
 
 // Tipos 
 Route::get('/tipos',[TiposController::class,'index'])->name('tipos.index');
+Route::get('/tipos/create',[TiposController::class,'create'])->name('tipos.create');
+Route::post('/tipos',[TiposController::Class,'store'])->name('tipos.store');
+Route::delete('tipos/destroy/{tipo}',[TiposController::class,'destroy'])->name('tipos.destroy');
 
 
 // Clientes

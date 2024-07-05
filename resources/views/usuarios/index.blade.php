@@ -37,7 +37,7 @@
         </table>
         
         <div class="d-flex justify-content-center">
-            <a href="" class="btn btn-outline-success fs-5 my-2 bi bi-plus w-100"></a>
+            <a href="{{route('usuarios.create')}}" class="btn btn-outline-success fs-5 my-2 bi bi-plus w-100"></a>
         </div>
     </div>
 </div>

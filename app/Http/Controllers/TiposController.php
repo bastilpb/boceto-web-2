@@ -23,7 +23,9 @@ class TiposController extends Controller
      */
     public function create()
     {
-        //
+        $tipos = Tipo::all();
+
+        return view('tipos.create',compact('tipos'));
     }
 
     /**
@@ -31,7 +33,14 @@ class TiposController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tipos = new Tipo();
+        $tipos->nombre = $request->nombre;
+        $tipos->costo = $request->costo;
+        $tipos->id = $request->input('tipo');
+
+        $tipos->save();
+
+        return redirect()->route('tipos.index');
     }
 
     /**
@@ -63,6 +72,9 @@ class TiposController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $tipos = Tipo::findOrFail($id);
+        $tipos->delete();
+
+        return redirect()->route('tipos.index')->with('success','Tipo eliminado correctamente!');
     }
 }
