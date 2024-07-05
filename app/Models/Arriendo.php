@@ -20,8 +20,6 @@ class Arriendo extends Model
         return $this->belongsTo('vehiculos');
     }
 
-
-
 }
 
 

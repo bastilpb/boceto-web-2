@@ -8,19 +8,8 @@
 @section('style')
 
 <style>
-
-    body{
-        background-image: linear-gradient()
-    }
-
-    .c-item {
-        height: 90vh;
-    }
-
-    .c-img {
-        height: 100%;
-        object-fit: cover;
-        filter: brightness(0.4);
+    body {
+        background-image: linear-gradient(#023E8A, #0196C7);
     }
 </style>
 
@@ -30,48 +19,64 @@
 
 @section('contenido')
 
+<div class="container-fluid d-flex align-items-center justify-content-center min-vh-100">
+    <div class="container bg-white border rounded p-2">
+        <h1 class="d-flex align-items-center justify-content-center">Servicios Arriendos la V</h1>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Vehiculos</h5>
+                        <p class="card-text">Vehiculos disponibles y sus caracteristicas.</p>
+                        <a href="{{route('vehiculos.index')}}">
+                            <button class="btn btn-primary">Vehiculos</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-<div id="carouselExampleCaptions" class="carousel slide">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Arrendar</h5>
+                        <p class="card-text">Ingresar arriendos y seleccionar los datos necesarios.</p>
+                        <a href="{{route('arriendos.index')}}">
+                            <button class="btn btn-primary">Arrendar</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Gestion Usuarios</h5>
+                        <p class="card-text">Edicion de todos los usuarios ingresados y por ingresar.</p>
+                    </div>
+                    <a href="">
+                        <button class="btn btn-primary">Gestion</button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Tipos</h5>
+                        <p class="card-text">Los tipos de vehiculos disponibles para agregar.</p>
+                        <a href="{{route('tipos.index')}}">
+                            <button class="btn btn-primary">Tipos</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="carousel-inner">
-        <div class="carousel-item active c-item">
-            <img src="{{asset('images/car-1.jpg')}}" class="d-block w-100 c-img" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Nuestras Opciones</h5>
-                <a href="{{route('vehiculos.index')}}" class="btn btn-primary">Ver Vehiculos</a>
-            </div>
-        </div>
-        <div class="carousel-item c-item">
-            <img src="{{asset('images/llaves-1.jpg')}}" class="d-block w-100 c-img" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Arrendar</h5>
-                <a href="{{route('arriendos.index')}}" class="btn btn-primary">Arrendar</a>
-            </div>
-        </div>
-        <div class="carousel-item c-item">
-            <img src="{{asset('images/trafico-calle.jpg')}}" class="d-block w-100 c-img" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Tipos Vehiculos</h5>
-                <a href="{{route('tipos.index')}}" class="btn btn-primary">Tipos</a>
-            </div>
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
 </div>
+
+</div>
+
+
 
 
 @endsection
