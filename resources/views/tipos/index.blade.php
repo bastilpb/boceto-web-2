@@ -38,8 +38,19 @@ BOTON PARA ELIMINAR TIPO DE VEHICULO Y BOTON PARA AGREGAR TIPO DE VEHICULO--}}
           <td>{{$tipo->nombre}}</td>
           <td>${{$tipo->costo}}</td>
           <td>
-            <button class="btn btn-primary btn-sm bi bi-pencil"></button>
-            <button class="btn btn-danger btn-sm bi bi-trash"></button>
+
+            {{-- <button class="btn btn-primary btn-sm bi bi-pencil"></button> --}}
+
+
+            <form method="POST" action="{{route('tipos.destroy',$tipo->id)}}">
+              @csrf
+
+              @method('DELETE')
+
+              <button class="btn btn-danger btn-sm bi bi-trash" onclick="return confirm('¿Estás seguro de eliminar este tipo??')"></button>
+
+          </form>
+
           </td>
         </tr>
         @endforeach
@@ -47,7 +58,7 @@ BOTON PARA ELIMINAR TIPO DE VEHICULO Y BOTON PARA AGREGAR TIPO DE VEHICULO--}}
     </table>
 
     <div class="d-flex justify-content-center">
-      <a href="" class="btn btn-outline-success fs-5 my-2 bi bi-plus w-100"></a>
+      <a href="{{route('tipos.create')}}" class="btn btn-outline-success fs-5 my-2 bi bi-plus w-100"></a>
     </div>
   </div>
 </div>

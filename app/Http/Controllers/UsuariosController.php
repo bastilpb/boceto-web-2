@@ -27,7 +27,9 @@ class UsuariosController extends Controller
      */
     public function create()
     {
-        //
+        $usuarios = Usuario::all();
+
+        return view('usuarios.create',compact('usuarios'));
     }
 
     /**
