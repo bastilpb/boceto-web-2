@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Arriendo;
 use Illuminate\Http\Request;
+use App\Models\Vehiculo;
 
 class ArriendosController extends Controller
 {
@@ -12,15 +13,20 @@ class ArriendosController extends Controller
      */
     public function index()
     {
-        return(view('arriendos.index'));
+
+        // Hago la variable '$vehiculos' y guardo todos los vehiculos de la bd en esta variable.(array)
+        $vehiculos = Vehiculo::all();
+
+
+        return view('arriendos.index',compact('vehiculos'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Vehiculo $vehiculo)
     {
-        //
+        return view('arriendos.create',compact('vehiculo'));
     }
 
     /**

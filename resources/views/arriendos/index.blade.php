@@ -1,89 +1,36 @@
 @extends('templates.master')
 
 
-@section('title', 'arriendos')
+@section('title', 'Arriendos disponibles')
 
-@section('style')
 
-<style>
-    body{
-        background-image: linear-gradient(#023E8A, #0196C7);
-    }
-
-</style>
-
-@endsection
 
 @section('contenido')
 
-<div class="container-fluid d-flex align-items-center justify-content-center min-vh-100">
-    <div class="container bg-white border border-primary rounded p-2">
 
-        <form method="POST" action="" >
-            
-            <div class="row">
+<div class="container-fluid d-flex justify-content-center align-items-center my-3">
 
-                <div class="text-center">
-                    <h1 class="fw-bold">Arrendar un vehiculo</h1>
-                </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="fw-bold text-white">Vehiculos Disponibles</h1>
+        </div>
 
-                <div class="col-6 my-2">
-                    <label for="patente" class="form-label"></label>
-                    <input type="text" id="patente" name="patente" placeholder="Patente: " class="form-control">
-                </div>
 
-                <div class="col-6 my-2">
-                    <label for="rut" class="form-label"></label>
-                    <input type="text" id="rut" name="rut" placeholder="Rut: " class="form-control">
-                </div>
-
-                <div class="col-6 my-2">
-                    <label for="dia-arriendo" class="form-label"></label>
-                    <input type="text" id="dia_arriendo" name="dia_arriendo" placeholder="Dia Arriendo: " class="form-control">
-                </div>
-
-                <div class="col-6 my-2">
-                    <label for="dia-entrega" class="form-label"></label>
-                    <input type="text" id="dia_entrega" name="dia_entrega" placeholder="Dia Entrega: " class="form-control"> 
-                </div>
-
-                <div class="col-12 my-2">
-                    <label for="total-pago" class="form-label"></label>
-                    <input type="text" id="total_pago" name="total_pago" placeholder="Total a Pagar: " class="form-control">
-                </div>
-
-                <div class="col-12 my-2">
-                    <label for="imagen-vehiculo" class="form-label">Imagen de entrega del vehiculo: </label>
-                    <input type="file" id="imagen_vehiculo" name="imagen_vehiculo" class="form-control-file">
-                </div>
-                
-                <div class="col-12 text-end">
-                    <button class="btn btn-primary" type="submit">Ingresar Arriendo</button>
+        @foreach($vehiculos as $index => $vehiculo)
+        <div class="col-4 my-2">
+            <div class="card rounded">
+                <img src="{{asset('images/chevroletsail.avif')}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{$vehiculo->marca}} {{$vehiculo->modelo}} {{$vehiculo->patente}}</h5>
+                    <p class="card-text">Tipo de Vehiculo: {{$vehiculo->tipo->nombre}}.<br>Estado del Vehiculo: {{$vehiculo->estado}}<br>Costo: ${{$vehiculo->tipo->costo}}<em>/dia.</em></p>
+                    <a href="{{route('arriendos.create',$vehiculo)}}" class="btn btn-primary">Arrendar!</a>
                 </div>
             </div>
-        </form>
+        </div>
+        @endforeach
 
     </div>
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

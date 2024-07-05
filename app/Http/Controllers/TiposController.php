@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Tipo;
 
 class TiposController extends Controller
 {
@@ -11,7 +12,10 @@ class TiposController extends Controller
      */
     public function index()
     {
-        return view('tipos.index');
+        // genero una lista de todos los tipos
+        $tipos = Tipo::all();
+
+        return view('tipos.index',compact('tipos'));
     }
 
     /**

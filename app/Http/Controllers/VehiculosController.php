@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Vehiculo;
 use Illuminate\Http\Request;
+use App\Models\Tipo;
 
 class VehiculosController extends Controller
 {
@@ -12,7 +13,10 @@ class VehiculosController extends Controller
      */
     public function index()
     {
-       return view('vehiculos.index');
+ 
+       $vehiculos = Vehiculo::all();
+ 
+       return view('vehiculos.index',compact('vehiculos'));
     }
 
     /**
@@ -20,7 +24,12 @@ class VehiculosController extends Controller
      */
     public function create()
     {
-        //
+
+        $estados = ['disponible','arrendado','de_baja','en mantenimiento'];
+        
+        $tipos = Tipo::all();
+        
+        return view('vehiculos.create',compact(['estados','tipos']));
     }
 
     /**
@@ -28,7 +37,17 @@ class VehiculosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $vehiculo = new Vehiculo();
+        $vehiculo->patente = $request->patente;
+        $vehiculo->marca = $request->marca;
+        $vehiculo->modelo = $request->modelo;
+        $vehiculo->estado = 'disponible';
+        $vehiculo->tipo_id = $request->input('tipo');
+
+        $vehiculo->save();
+        
+        return redirect()->route('vehiculos.index');
+
     }
 
     /**
@@ -58,8 +77,11 @@ class VehiculosController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Vehiculo $vehiculo)
+    public function destroy($patente)
     {
-        //
+        $vehiculo = Vehiculo::findOrFail($patente);
+        $vehiculo->delete();
+
+        return redirect()->route('vehiculos.index')->with('success','Vehiculo eliminado correctamente!');
     }
 }

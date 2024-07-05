@@ -13,10 +13,13 @@ class Vehiculo extends Model
 
 
     protected $table = 'vehiculos';
+    protected $primaryKey = 'patente';
+    protected $keyType = 'string';
     public $timestamps = false;
+    public $incrementing = false;
 
     public function tipo(): BelongsTo{
-        return $this->belongsTo(Vehiculo::class);
+        return $this->belongsTo(Tipo::class);
     }
 
     public function arriendos() : HasMany{

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\ViewServiceProvider;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
+use App\Models\Usuario;
 
 class UsuariosController extends Controller
 {
@@ -13,7 +15,11 @@ class UsuariosController extends Controller
      */
     public function index()
     {
-        //
+
+        $usuarios = Usuario::all();
+
+
+        return view('usuarios.index',compact('usuarios'));
     }
 
     /**
@@ -72,8 +78,11 @@ class UsuariosController extends Controller
     public function autenticar(Request $request){
 
         $credenciales = ['email'=>$request->email,'password'=>$request->password];
-        dd($credenciales);
-
+        if(Auth::attempt($credenciales)){
+            $request->session()->regenerate();
+            return redirect()->route('home.index');
+        }
+        return back()->withErrors('Datos Incorrectos!!!')->onlyInput('email');
     }
 
 }

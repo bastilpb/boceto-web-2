@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     {{-- Link bootstrap --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -18,8 +19,10 @@
 
     <style>
         body {
-            font-family: "Roboto Slab", serif;
-            padding-top: 56px;
+            font-family: "Roboto Slab", sans-serif;
+            padding-top: 70px;
+            background-image: linear-gradient(#023E8A, #0196C7);
+            min-height: 100vh;
         }
 
         .navbar {
@@ -61,8 +64,14 @@
                     </li>
                 </ul>
 
+                <div class="nav-item mx-5 text-primary">
+                    @auth
+                    {{Auth::user()->nombre}}
+                    ({{Auth::user()->perfil->nombre}})
+                    @endauth
+                </div>
 
-                <a href="#" class="btn btn-primary border-white mx-2">Iniciar Sesion</a>
+                <a href="{{route('usuarios.login')}}" class="btn btn-primary">Cerrar Sesion</a>
 
             </div>
         </div>

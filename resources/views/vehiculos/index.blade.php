@@ -4,87 +4,65 @@
 @section('title', 'Vehiculos')
 
 
-
 @section('contenido')
 
 
-<div class="container-fluid d-flex justify-content-center align-items-center my-3">
 
-    <div class="row">
-        <div class="col-12 text-center">
-            <h1 class="fw-bold">Tipos de Vehiculos</h1>
+
+<div class="container-fluid d-flex justify-content-center">
+
+    <div class="container bg-white rounded">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Patente</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach($vehiculos as $index => $vehiculo)
+                <tr>
+                    <th scope="row">{{$index+1}}</th>
+                    <td>{{$vehiculo->patente}}</td>
+                    <td>{{$vehiculo->marca}}</td>
+                    <td>{{$vehiculo->modelo}}</td>
+                    <td>{{$vehiculo->estado}}</td>
+                    <td>{{$vehiculo->tipo->nombre}}</td>
+                    <td>
+
+                        {{-- <button class="btn btn-primary btn-sm bi bi-pencil"></button> --}}
+
+                        <form method="POST" action="{{route('vehiculos.destroy',$vehiculo->patente)}}">
+                            @csrf
+
+                            @method('DELETE')
+
+                            <button class="btn btn-danger btn-sm bi bi-trash" onclick="return confirm('¿Estás seguro de eliminar este vehiculo??')"></button>
+
+                        </form>
+                        
+
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+
+        <div class="d-flex justify-content-center">
+            <a href="{{route('vehiculos.create')}}" class="btn btn-outline-success fs-5 my-2 bi bi-plus w-100"></a>
         </div>
-
-        <div class="col-4 my-2">
-            <div class="card rounded">
-                <img src="{{asset('images/chevroletsail.avif')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Chevrolet Sail 2020</h5>
-                    <p class="card-text">Tipo de Vehiculo: Sedan.<br>Estado del Vehiculo: <br>Tipo de combustible: Bencina.<br>Rendimiento: 15<em>[km]/Lt.</em><br>Costo: $33.000<em>/dia.</em></p>
-                    <a href="#" class="btn btn-primary">Arrendar!</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-4 my-2">
-            <div class="card rounded">
-                <img src="{{asset('images/susukibaleno.jpg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Susuki Baleno 2023</h5>
-                    <p class="card-text">Tipo de Vehiculo: Hatchback.<br>Estado del Vehiculo: <br>Tipo de combustible: Bencina.<br>Rendimiento: 20.5<em>[km]/Lt.</em><br>Costo: $29.000<em>/dia.</em></p>
-                    <a href="#" class="btn btn-primary">Arrendar!</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-4 my-2">
-            <div class="card rounded">
-                <img src="{{asset('images/mazdacx30.jpg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Mazda CX-30 2019</h5>
-                    <p class="card-text">Tipo de Vehiculo: Suv.<br>Estado del Vehiculo: <br>Tipo de combustible: Bencina.<br>Rendimiento: 14.6<em>[km]/Lt.</em><br>Costo: $41.000<em>/dia.</em></p>
-                    <a href="#" class="btn btn-primary">Arrendar!</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-4 my-2">
-            <div class="card rounded">
-                <img src="{{asset('images/audirs5.jpg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Audi RS 5 2022</h5>
-                    <p class="card-text">Tipo de Vehiculo: Coupé.<br>Estado del Vehiculo: <br>Tipo de combustible: Bencina.<br>Rendimiento: 9.6<em>[km]/Lt.</em><br>Costo: $54.0O0<em>/dia.</em></p>
-                    <a href="#" class="btn btn-primary">Arrendar!</a>
-                </div>
-            </div>
-        </div>
-    
-        <div class="col-4 my-2">
-            <div class="card rounded">
-                <img src="{{asset('images/fordmustang.jpeg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Ford Mustang 2021</h5>
-                    <p class="card-text">Tipo de Vehiculo: Deportivo.<br>Estado del Vehiculo: <br>Tipo de combustible: Bencina.<br>Rendimiento: 10.5<em>[km]/Lt.</em><br>Costo: $83.000<em>/dia.</em></p>
-                    <a href="#" class="btn btn-primary">Arrendar!</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-4 my-2">
-            <div class="card rounded">
-                <img src="{{asset('images/ford-150.jpg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Ford F-150 2020</h5>
-                    <p class="card-text">Tipo de Vehiculo: Pickup.<br>Estado del Vehiculo: <br>Tipo de combustible: Bencina.<br>Rendimiento: 7<em>[km]/Lt.</em><br>Costo: $64.000<em>/dia.</em></p>
-                    <a href="#" class="btn btn-primary">Arrendar!</a>
-                </div>
-            </div>
-        </div>
-
-        
-
     </div>
+
+
+
 </div>
+
 
 
 
