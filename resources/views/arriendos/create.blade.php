@@ -10,7 +10,7 @@
 <div class="container-fluid d-flex align-items-center justify-content-center min-vh-100">
     <div class="container bg-white border border-primary rounded p-2">
 
-        <form method="POST" action="" >
+        <form method="POST" action=""  >
             
             <div class="row">
 
@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="col-12 my-2">
-                    <label for="imagen-vehiculo" class="form-label">Imagen de entrega del vehiculo: </label>
+                    <label for="imagen_vehiculo" class="form-label">Imagen de entrega del vehiculo: </label>
                     <input type="file" id="imagen_vehiculo" name="imagen_vehiculo" class="form-control-file">
                 </div>
                 

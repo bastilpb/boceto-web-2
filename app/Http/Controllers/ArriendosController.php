@@ -41,7 +41,7 @@ class ArriendosController extends Controller
         $arriendo->dia_entrega = $request->dia_entrega;
         $arriendo->total_pago = $request->total_pago;
         $arriendo->save();
-        return redirect()->route('arriendos.index');
+        
 
     }
 

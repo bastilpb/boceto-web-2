@@ -7,6 +7,8 @@ use Illuminate\View\ViewServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use App\Models\Usuario;
+use App\Models\Perfil;
+
 
 class UsuariosController extends Controller
 {
@@ -27,7 +29,8 @@ class UsuariosController extends Controller
      */
     public function create()
     {
-        //
+        $perfiles = Perfil::all();
+        return view('usuarios.create',compact('perfiles'));
     }
 
     /**
@@ -35,8 +38,8 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+       
+    }   
 
     /**
      * Display the specified resource.

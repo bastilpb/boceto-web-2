@@ -19,7 +19,7 @@ return new class extends Migration
             // 'modelo' es un string que lleva el modelo del vehiculo
             $table->string('modelo',50);
             // 'estado' es un enum que indica el estado en el que se encuentra el vehiculo.
-            $table->enum('estado',['disponible','arrendado','de_baja','en mantenimiento']);
+            $table->enum('estado',['disponible','arrendado','de_baja','en_mantenimiento']);
             // 'tipo_id' es un integer positivo que apuntará al tipo de la tabla tipos
             $table->unsignedBigInteger('tipo_id');
             // 'tipo_id' es una foreign que referencia a un 'id' en la tabla 'tipos'

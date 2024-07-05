@@ -12,10 +12,16 @@ Route::get('/',[HomeController::class,'index'])->name('home.index')->middleware(
 
 
 
-// Usuarios 
+
+
+
 Route::get('/usuarios/login',[UsuariosController::class,'login'])->name('usuarios.login');
 Route::post('/usuarios/login',[UsuariosController::class, 'autenticar'])->name('usuarios.autenticar');
 Route::get('/usuarios',[UsuariosController::class,'index'])->name('usuarios.index');
+// Route::get('/usuarios/gestion',[UsuariosController::class,'edit'])->name('usuarios.edit');
+Route::get('/usuarios/crear',[UsuariosController::class,'create'])->name('usuarios.create');
+
+
 
 
 // Vehiculos 
@@ -26,7 +32,7 @@ Route::delete('vehiculos/destroy/{vehiculo}',[VehiculosController::class,'destro
 
 // Arriendos 
 Route::get('/arriendos',[ArriendosController::class,'index'])->name('arriendos.index');
-Route::post('/arriendos',[ArriendosController::class,'store'])->name('arriendos.store');
+// Route::post('/arriendos',[ArriendosController::class,'store'])->name('arriendos.store');
 
 Route::get('/arriendos/{vehiculo}',[ArriendosController::class,'create'])->name('arriendos.create');
 
