@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Arriendo;
 use Illuminate\Http\Request;
 
-class ArriendosController extends Controller
+class TiposController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return(view('arriendos.index'));
+        return view('tipos.index');
     }
 
     /**
@@ -28,21 +27,13 @@ class ArriendosController extends Controller
      */
     public function store(Request $request)
     {
-        $arriendo = new Arriendo();
-        $arriendo->patente = $request->patente;
-        $arriendo->rut = $request->rut;
-        $arriendo->dia_arriendo = $request->dia_arriendo;
-        $arriendo->dia_entrega = $request->dia_entrega;
-        $arriendo->total_pago = $request->total_pago;
-        $arriendo->save();
-        return redirect()->route('arriendos.index');
-
+        //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Arriendo $arriendo)
+    public function show(string $id)
     {
         //
     }
@@ -50,7 +41,7 @@ class ArriendosController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Arriendo $arriendo)
+    public function edit(string $id)
     {
         //
     }
@@ -58,7 +49,7 @@ class ArriendosController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Arriendo $arriendo)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -66,7 +57,7 @@ class ArriendosController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Arriendo $arriendo)
+    public function destroy(string $id)
     {
         //
     }

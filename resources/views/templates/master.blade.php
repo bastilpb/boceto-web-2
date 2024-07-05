@@ -56,8 +56,8 @@
                         <a class="nav-link" href="{{route('arriendos.index')}}">Arrendar</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link mx-2" href="#">Contacto</a>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="{{route('tipos.index')}}">Tipos Vehiculos</a>
                     </li>
                 </ul>
 

@@ -8,6 +8,11 @@
 @section('style')
 
 <style>
+
+    body{
+        background-image: linear-gradient()
+    }
+
     .c-item {
         height: 90vh;
     }
@@ -46,8 +51,15 @@
         <div class="carousel-item c-item">
             <img src="{{asset('images/llaves-1.jpg')}}" class="d-block w-100 c-img" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Arrienda AHORA!!!</h5>
+                <h5>Arrendar</h5>
                 <a href="{{route('arriendos.index')}}" class="btn btn-primary">Arrendar</a>
+            </div>
+        </div>
+        <div class="carousel-item c-item">
+            <img src="{{asset('images/trafico-calle.jpg')}}" class="d-block w-100 c-img" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Tipos Vehiculos</h5>
+                <a href="{{route('tipos.index')}}" class="btn btn-primary">Tipos</a>
             </div>
         </div>
     </div>
