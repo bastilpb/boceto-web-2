@@ -16,7 +16,6 @@ Route::get('/',[HomeController::class,'index'])->name('home.index')->middleware(
 Route::get('/usuarios/login',[UsuariosController::class,'login'])->name('usuarios.login');
 Route::post('/usuarios/login',[UsuariosController::class, 'autenticar'])->name('usuarios.autenticar');
 Route::get('/usuarios',[UsuariosController::class,'index'])->name('usuarios.index');
-Route::get('/usuarios/create',[UsuariosController::class,'create'])->name('usuarios.create');
 
 
 // Vehiculos 
