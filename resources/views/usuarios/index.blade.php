@@ -27,7 +27,10 @@
                     <td>{{$usuario->nombre}}</td>
                     <td>{{$usuario->perfil->nombre}}</td>
                     <td>
-                        <button class="btn btn-primary btn-sm bi bi-pencil"></button>
+                        
+                        <a href="{{route('usuarios.edit', $usuario)}}">
+                            <button class="btn btn-primary btn-sm bi bi-pencil"></button> 
+                        </a>
                         <button class="btn btn-danger btn-sm bi bi-trash"></button>
                     </td>
                 </tr>

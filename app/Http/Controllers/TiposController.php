@@ -33,12 +33,11 @@ class TiposController extends Controller
      */
     public function store(Request $request)
     {
-        $tipos = new Tipo();
-        $tipos->nombre = $request->nombre;
-        $tipos->costo = $request->costo;
-        $tipos->id = $request->input('tipo');
+        $tipo = new Tipo();
+        $tipo->nombre = $request->nombre;
+        $tipo->costo = $request->costo;
 
-        $tipos->save();
+        $tipo->save();
 
         return redirect()->route('tipos.index');
     }
@@ -54,9 +53,11 @@ class TiposController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        //
+
+    public function edit(Tipo $tipo)
+    {   
+        
+        return view('tipos.edit',compact('tipo'));
     }
 
     /**
@@ -70,10 +71,9 @@ class TiposController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Tipo $tipo)
     {
-        $tipos = Tipo::findOrFail($id);
-        $tipos->delete();
+        $tipo->delete();
 
         return redirect()->route('tipos.index')->with('success','Tipo eliminado correctamente!');
     }

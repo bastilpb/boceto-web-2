@@ -22,11 +22,7 @@
 
                             <div class="col-12 my-3">
                                 <label for="costo" class="form-label">Costo: </label>
-                                <select class="form-select" id="costo" name="costo">
-                                    @foreach ($tipos as $index => $tipo)
-                                    <option value="{{$index+1}}">{{$tipo->costo}}</option>
-                                    @endforeach
-                                </select>
+                                <input type="text" class="form-control" id="costo" name="costo" placeholder="Ingrese el costo del tipo">
                             </div>
 
                             <div class="col-12 mx-auto d-flex justify-content-center">
