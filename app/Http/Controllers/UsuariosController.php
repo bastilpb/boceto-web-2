@@ -38,7 +38,14 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-       
+        $usuarios = new Usuario();
+        $usuarios->email = $request->email;
+        $usuarios->password = $request->password;
+        $usuarios->nombre = $request->nombre;
+        $usuarios->perfil_id = $request->input('perfil_id');
+
+        $usuarios->save();
+        return redirect()->route('usuarios.index');
     }   
 
     /**

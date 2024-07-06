@@ -20,6 +20,7 @@ Route::post('/usuarios/login',[UsuariosController::class, 'autenticar'])->name('
 Route::get('/usuarios',[UsuariosController::class,'index'])->name('usuarios.index');
 // Route::get('/usuarios/gestion',[UsuariosController::class,'edit'])->name('usuarios.edit');
 Route::get('/usuarios/crear',[UsuariosController::class,'create'])->name('usuarios.create');
+Route::post('/usuarios/crear',[UsuariosController::class,'store'])->name('usuarios.store');
 
 
 
@@ -32,7 +33,7 @@ Route::delete('vehiculos/destroy/{vehiculo}',[VehiculosController::class,'destro
 
 // Arriendos 
 Route::get('/arriendos',[ArriendosController::class,'index'])->name('arriendos.index');
-// Route::post('/arriendos',[ArriendosController::class,'store'])->name('arriendos.store');
+Route::post('/arriendos',[ArriendosController::class,'store'])->name('arriendos.store');
 
 Route::get('/arriendos/{vehiculo}',[ArriendosController::class,'create'])->name('arriendos.create');
 
@@ -40,8 +41,5 @@ Route::get('/arriendos/{vehiculo}',[ArriendosController::class,'create'])->name(
 // Tipos 
 Route::get('/tipos',[TiposController::class,'index'])->name('tipos.index');
 Route::get('/tipos/create',[TiposController::class,'create'])->name('tipos.create');
-Route::post('/tipos',[TiposController::Class,'store'])->name('tipos.store');
+Route::post('/tipos/create',[TiposController::Class,'store'])->name('tipos.store');
 Route::delete('tipos/destroy/{tipo}',[TiposController::class,'destroy'])->name('tipos.destroy');
-
-
-// Clientes
