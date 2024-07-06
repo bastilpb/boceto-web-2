@@ -29,7 +29,7 @@ class UsuariosController extends Controller
      */
     public function create()
     {
-         $perfiles = Perfil::all();
+        $perfiles = Perfil::all();
         return view('usuarios.create',compact('perfiles'));
     }
 

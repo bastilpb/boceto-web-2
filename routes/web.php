@@ -32,7 +32,7 @@ Route::delete('vehiculos/destroy/{vehiculo}',[VehiculosController::class,'destro
 
 // Arriendos 
 Route::get('/arriendos',[ArriendosController::class,'index'])->name('arriendos.index');
-// Route::post('/arriendos',[ArriendosController::class,'store'])->name('arriendos.store');
+Route::post('/arriendos',[ArriendosController::class,'store'])->name('arriendos.store');
 
 Route::get('/arriendos/{vehiculo}',[ArriendosController::class,'create'])->name('arriendos.create');
 

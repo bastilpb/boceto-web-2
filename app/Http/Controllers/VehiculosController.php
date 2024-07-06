@@ -46,8 +46,7 @@ class VehiculosController extends Controller
 
         $vehiculo->save();
         
-        
-
+        return redirect()->route('vehiculos.index');
     }
 
     /**

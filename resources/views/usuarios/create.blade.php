@@ -3,15 +3,6 @@
 
 @section('title','Crear')
 
-@section('style')
-<style>
-    body {
-      background-image: linear-gradient(#023E8A, #0196C7);
-    }
-  </style>
-@endsection
-
-
 
 @section('contenido')
 

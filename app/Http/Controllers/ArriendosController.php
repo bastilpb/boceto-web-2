@@ -42,7 +42,7 @@ class ArriendosController extends Controller
         $arriendo->total_pago = $request->total_pago;
         $arriendo->save();
         
-
+        return redirect()->route('arriendos.index');
     }
 
     /**
