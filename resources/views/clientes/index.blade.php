@@ -31,26 +31,6 @@
                         <button class="btn btn-danger btn-sm bi bi-trash"></button>
                     </td>
                 </tr>
-
-                <tr>
-                    <th scope="row">2</th>
-                    <td>###</td>
-                    <td>###</td>
-                    <td>
-                        <button class="btn btn-primary btn-sm bi bi-pencil"></button>
-                        <button class="btn btn-danger btn-sm bi bi-trash"></button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">3</th>
-                    <td>###</td>
-                    <td>###</td>
-                    <td>
-                        <button class="btn btn-primary btn-sm bi bi-pencil"></button>
-                        <button class="btn btn-danger btn-sm bi bi-trash"></button>
-                    </td>
-                </tr>
             </tbody>
 
         </table>

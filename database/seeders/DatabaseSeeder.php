@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             PerfilesSeeder::class,
             UsuariosSeeder::class,
             VehiculosSeeder::class,
+            ClientesSeeder::class,
             ArriendosSeeder::class,
         ]);
 

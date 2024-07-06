@@ -24,7 +24,7 @@ class ArriendosSeeder extends Seeder
                 'imagen_entrega' => 'entrega1.jpg',
                 'imagen_devolucion' => 'devolucion1.jpg',
                 'vehiculo_patente' => 'ABC123',
-                'usuario_email' => 'admin@usm.cl',
+                'rut_cliente' => '12345678-9',
             ],
             [
                 'fecha_inicio' => Carbon::now()->subDays(8),
@@ -32,7 +32,7 @@ class ArriendosSeeder extends Seeder
                 'imagen_entrega' => 'entrega2.jpg',
                 'imagen_devolucion' => 'devolucion2.jpg',
                 'vehiculo_patente' => 'DEF456',
-                'usuario_email' => 'ejec@usm.cl',
+                'rut_cliente' => '12345678-9',
             ],
             [
                 'fecha_inicio' => Carbon::now()->subDays(6),
@@ -40,7 +40,7 @@ class ArriendosSeeder extends Seeder
                 'imagen_entrega' => 'entrega3.jpg',
                 'imagen_devolucion' => 'devolucion3.jpg',
                 'vehiculo_patente' => 'GHI789',
-                'usuario_email' => 'ejec@usm.cl',
+                'rut_cliente' => '12345678-9',
             ],
         ]);
     }

@@ -25,9 +25,9 @@ return new class extends Migration
             // Foranea vehiculo_id la cual apunta a un id en vehiculos.
             $table->foreign('vehiculo_patente')->references('patente')->on('vehiculos');
             // string usuario_email
-            $table->string('usuario_email');
+            $table->string('rut_cliente');
             // foranea usuario_email la cual apunta a un email en usuarios.
-            $table->foreign('usuario_email')->references('email')->on('usuarios');
+            $table->foreign('rut_cliente')->references('rut')->on('clientes');
 
 
         });

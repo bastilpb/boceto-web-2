@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Arriendo extends Model
 {
@@ -12,12 +13,12 @@ class Arriendo extends Model
     protected $table = 'arriendos';
     public $timestamps = false;
 
-    public function usuario() : BelongsTo{
-        return $this->belongsTo('usuarios');
+    public function vehiculo() : BelongsTo{
+        return $this->belongsTo(Vehiculo::class);
     }
 
-    public function vehiculo() : BelongsTo{
-        return $this->belongsTo('vehiculos');
+    public function cliente(): BelongsTo{
+        return $this->belongsTo(Cliente::class);
     }
 
 }

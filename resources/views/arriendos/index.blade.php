@@ -22,13 +22,33 @@
                 <img src="{{asset('images/chevroletsail.avif')}}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{$vehiculo->marca}} {{$vehiculo->modelo}} {{$vehiculo->patente}}</h5>
-                    <p class="card-text">Tipo de Vehiculo: {{$vehiculo->tipo->nombre}}.<br>Estado del Vehiculo: {{$vehiculo->estado}}<br>Costo: ${{$vehiculo->tipo->costo}}<em>/dia.</em></p>
+                    <p class="card-text">Tipo de Vehiculo: {{$vehiculo->tipo->nombre}}.<br>Estado del Vehiculo:
+                        {{$vehiculo->estado}}<br>Costo: ${{$vehiculo->tipo->costo}}<em>/dia.</em></p>
                     <a href="{{route('arriendos.create',$vehiculo)}}" class="btn btn-primary">Arrendar!</a>
                 </div>
             </div>
         </div>
         @endforeach
 
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">rut_cliente</th>
+                    <th scope="col">patente_vehiculo</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($arriendos as $index => $arriendo)
+                <tr>
+                    <th scope="row">{{$arriendo->id}}</th>
+                    <td>{{$arriendo->rut_cliente}}</td>
+                    <td>{{$arriendo->vehiculo->patente}}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 </div>
 

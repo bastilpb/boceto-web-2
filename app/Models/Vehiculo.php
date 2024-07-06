@@ -26,5 +26,7 @@ class Vehiculo extends Model
         return $this->belongsTo(Arriendo::class);
     }
 
+    
+
 
 }

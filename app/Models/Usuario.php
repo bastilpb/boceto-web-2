@@ -23,9 +23,6 @@ class Usuario extends Authenticatable
         return $this->belongsTo(Perfil::class);
     }
 
-    public function arriendos():HasMany{
-        return $this->hasMany(Arriendo::class,'usuario_email','email');
-    }
 
     public function nombrePerfil():String{
         return $this->perfil->nombre;
