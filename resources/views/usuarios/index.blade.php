@@ -31,12 +31,16 @@
                         <a href="{{route('usuarios.edit', $usuario)}}">
                             <button class="btn btn-primary btn-sm bi bi-pencil"></button> 
                         </a>
-                        <button class="btn btn-danger btn-sm bi bi-trash"></button>
+                        <form method="POST" action="{{route('usuarios.destroy',$usuario->email)}}">
+                            @csrf
+              
+                            @method('DELETE')
+              
+                            <button class="btn btn-danger btn-sm bi bi-trash" onclick="return confirm('¿Estás seguro de eliminar este usuario??')"></button>
                     </td>
                 </tr>
                 @endforeach
             </tbody>
-
         </table>
         
         <div class="d-flex justify-content-center">

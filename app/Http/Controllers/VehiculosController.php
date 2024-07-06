@@ -54,15 +54,16 @@ class VehiculosController extends Controller
      */
     public function show(Vehiculo $vehiculo)
     {
-        //
+        return view('vehiculos.show',compact('vehiculo'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit(Vehiculo $vehiculo)
     {
-        //
+
+        $estados = ['disponible','arrendado','de_baja','en_mantenimiento'];
+        $tipos = Tipo::all();
+        return view('vehiculos.edit',compact(['vehiculo','estados','tipos']));
     }
 
     /**
@@ -70,7 +71,15 @@ class VehiculosController extends Controller
      */
     public function update(Request $request, Vehiculo $vehiculo)
     {
-        //
+        $vehiculo->estado = $request->estado;
+        $vehiculo->patente = $request->patente;
+        $vehiculo->marca = $request->marca;
+        $vehiculo->modelo = $request->modelo;
+        $vehiculo->tipo_id = $request->tipo_id;
+
+        $vehiculo->save();
+
+        return redirect()->route('vehiculos.index');
     }
 
     /**

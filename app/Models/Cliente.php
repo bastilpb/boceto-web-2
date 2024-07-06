@@ -10,16 +10,14 @@ class Cliente extends Model
     use HasFactory;
 
     protected $table = 'clientes';
-    protected $primaryKey = 'rut';
-    protected $keyType = 'string';
     public $incrementing = false;
     public $timestamps = false;
 
 
 
-    public function arriendos(): HasMany
+    public function arriendos()
     {
-        return $this->hasMany(Arriendo::class,'rut_cliente','rut');
+        return $this->hasMany('App\Models\Arriendo');
     }
 
 

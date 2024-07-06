@@ -11,7 +11,7 @@
         <h3 class="card-header border-0 text-center">Editar Tipo</h3>
         <div class="card-body">
             <div class="row">
-                <form method="POST" action="{{ route('tipos.update')}}">
+                <form method="POST" action="{{ route('tipos.update',$tipo)}}">
                     @csrf
                     <div class="row">
                         <div class="col-12 my-3">
@@ -26,7 +26,7 @@
 
                     </div>
 
-                    <a href="#" class="btn btn-primary">Editar</a>
+                    <button class="btn btn-primary" type="submit">Editar</button>
                 </form>
             </div>
         </div>

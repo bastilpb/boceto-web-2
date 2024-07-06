@@ -13,13 +13,9 @@ class ArriendosController extends Controller
      */
     public function index()
     {
-
-        // Hago la variable '$vehiculos' y guardo todos los vehiculos de la bd en esta variable.(array)
-        $vehiculos = Vehiculo::all();
         $arriendos = Arriendo::all();
 
-
-        return view('arriendos.index',compact(['vehiculos','arriendos']));
+        return view('arriendos.index',compact('arriendos'));
     }
 
     /**
@@ -51,7 +47,7 @@ class ArriendosController extends Controller
      */
     public function show(Arriendo $arriendo)
     {
-        //
+        return view('arriendos.show',$arriendo);
     }
 
     /**

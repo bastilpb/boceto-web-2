@@ -9,47 +9,35 @@
 
 
 <div class="container-fluid d-flex justify-content-center align-items-center my-3">
-
-    <div class="row">
-        <div class="col-12 text-center">
-            <h1 class="fw-bold text-white">Vehiculos Disponibles</h1>
-        </div>
-
-
-        @foreach($vehiculos as $index => $vehiculo)
-        <div class="col-4 my-2">
-            <div class="card rounded">
-                <img src="{{asset('images/chevroletsail.avif')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{$vehiculo->marca}} {{$vehiculo->modelo}} {{$vehiculo->patente}}</h5>
-                    <p class="card-text">Tipo de Vehiculo: {{$vehiculo->tipo->nombre}}.<br>Estado del Vehiculo:
-                        {{$vehiculo->estado}}<br>Costo: ${{$vehiculo->tipo->costo}}<em>/dia.</em></p>
-                    <a href="{{route('arriendos.create',$vehiculo)}}" class="btn btn-primary">Arrendar!</a>
-                </div>
-            </div>
-        </div>
-        @endforeach
-
-
+    <div class="container py-2 rounded bg-white">
+        <h2 class="text-center">Listado de Arriendos</h2>
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">rut_cliente</th>
-                    <th scope="col">patente_vehiculo</th>
+                    <th scope="col">Patente</th>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Fecha de Inicio</th>
+                    <th scope="col">Fecha de Devolucion</th>
+                    <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($arriendos as $index => $arriendo)
                 <tr>
-                    <th scope="row">{{$arriendo->id}}</th>
+                    <th scope="row">{{$index+1}}</th>
+                    <td>{{$arriendo->vehiculo_patente}}</td>
                     <td>{{$arriendo->rut_cliente}}</td>
-                    <td>{{$arriendo->vehiculo->patente}}</td>
-                </tr>
+                    <td>{{$arriendo->fecha_inicio}}</td>
+                    <td>{{$arriendo->fecha_devolucion}}</td>
+                    <td><a href="{{route('arriendos.show',$arriendo)}}" class="btn btn-sm btn-primary bi bi-eye"></a></td>
+                </tr> 
                 @endforeach
-            </tbody>
         </table>
     </div>
+    
+
+
 </div>
 
 

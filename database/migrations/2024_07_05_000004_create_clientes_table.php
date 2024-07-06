@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('clientes', function (Blueprint $table) {
             $table->string('rut','10')->primary();
             $table->string('nombre','30');
+            
         });
     }
 

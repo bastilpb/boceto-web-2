@@ -13,7 +13,10 @@ class ClientesController extends Controller
      */
     public function index()
     {
-        return view('clientes.index');
+
+        $clientes = Cliente::all();
+
+        return view('clientes.index',compact('clientes'));
     }
 
     /**
@@ -43,17 +46,25 @@ class ClientesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Cliente $cliente)
+    public function edit($id)
     {
-        //
+
+        return views('clientes.edit',compact('cliente'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Cliente $cliente)
+    public function update(Request $request,Cliente $cliente)
     {
-        //
+        $cliente->rut = $request->rut;
+
+        $cliente->nombre = $request->nombre;
+
+        $cliente->save();
+
+        return redirect()->route('clientes.index');
+
     }
 
     /**
@@ -61,6 +72,8 @@ class ClientesController extends Controller
      */
     public function destroy(Cliente $cliente)
     {
-        //
+        $cliente->delete();
+
+        return redirect()->route('clientes.index')->with('success','Tipo eliminado correctamente!');
     }
 }

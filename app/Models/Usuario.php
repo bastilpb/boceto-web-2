@@ -4,8 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Usuario extends Authenticatable
@@ -19,8 +17,9 @@ class Usuario extends Authenticatable
     public $timestamps = false;
 
 
-    public function perfil():BelongsTo{
-        return $this->belongsTo(Perfil::class);
+    public function perfil()
+    {
+        return $this->belongsTo('App\Models\Perfil');
     }
 
 

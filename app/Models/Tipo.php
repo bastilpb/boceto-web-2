@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+
 
 class Tipo extends Model
 {
@@ -13,8 +13,8 @@ class Tipo extends Model
     protected $table = 'tipos';
     public $timestamps = false;
 
-    public function vehiculos(): HasMany{
-        return $this->hasMany(Vehiculo::class);
+    public function vehiculos(){
+        return $this->hasMany('App\Models\Vehiculo');
     }
 
 

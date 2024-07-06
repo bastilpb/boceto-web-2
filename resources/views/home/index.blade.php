@@ -69,7 +69,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Gestionar Arriendos</h5>
                         <p class="card-text">Gestionar todos los arriendos.</p>
-                        <a href="" class="btn btn-primary">Gestion Arriendos</a>
+                        <a href="{{route('arriendos.index')}}" class="btn btn-primary">Gestion Arriendos</a>
                     </div>
                 </div>
             </div>

@@ -18,12 +18,13 @@ class Vehiculo extends Model
     public $timestamps = false;
     public $incrementing = false;
 
-    public function tipo(): BelongsTo{
-        return $this->belongsTo(Tipo::class);
+    public function tipo()
+    {
+        return $this->belongsTo('App\Models\Tipo');
     }
 
-    public function arriendos() : HasMany{
-        return $this->belongsTo(Arriendo::class);
+    public function arriendos(){
+        return $this->belongsTo('App\Models\Arriendo');
     }
 
     

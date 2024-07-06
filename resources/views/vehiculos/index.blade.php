@@ -34,9 +34,10 @@
                     <td>{{$vehiculo->modelo}}</td>
                     <td>{{$vehiculo->estado}}</td>
                     <td>{{$vehiculo->tipo->nombre}}</td>
+                    <td><a href="{{route('vehiculos.show',$vehiculo)}}" class="btn btn-sm btn-primary bi bi-eye"></a></td>
                     <td>
 
-                        {{-- <button class="btn btn-primary btn-sm bi bi-pencil"></button> --}}
+                    
 
                         <form method="POST" action="{{route('vehiculos.destroy',$vehiculo->patente)}}">
                             @csrf
@@ -47,6 +48,9 @@
 
                         </form>
                         
+                        <a href="{{route('vehiculos.edit', $vehiculo)}}">
+                            <button class="btn btn-primary btn-sm bi bi-pencil"></button> 
+                          </a>
 
                     </td>
                 </tr>
